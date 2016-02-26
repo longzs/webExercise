@@ -1,0 +1,72 @@
+@import "mixins/variables.less";
+@import "mixins/mixins.less";
+@import "mixins/reset.less";
+@import "mixins/site.less";
+/* styles inherited from site.less */
+.loading {
+	.site > .loading;
+}
+.locator {
+	.site > .locator;
+}
+/* page styles */
+.wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: @sp-height;
+	display: none;
+	font-size: @sub-size;
+	line-height: 1em;
+	color: @desc-color;
+	@left-side-width: 30%;
+	.side {
+		float: left;
+		height: 100%;
+		overflow: auto;
+		&.part-wrap {
+			width: @left-side-width;
+			background-color: #F7F7F7;
+			.part {
+				padding: @block-spacing-large 0;
+				text-indent: @block-spacing;
+				&.active {
+					color: @info-color;
+					background-color: @white;
+				}
+			}
+		}
+		&.disease-wrap {
+			position: relative;
+			z-index: 1;
+			width: 100% - @left-side-width;
+			background-color: @white;
+			.diseases {
+
+				display: none;
+				&.active {
+					display: block;
+				}
+			}
+			.disease {
+				padding: @block-spacing-large 0;
+				text-indent: @block-spacing;
+				@arrow-size: @sub-size;
+				&:after {
+					content: "";
+					float: right;
+					width: @arrow-size;
+					height: @arrow-size;
+					margin-right: @block-spacing;
+					background: url("@{images}/glyph_arrow.png") center no-repeat;
+					background-size: @arrow-size @arrow-size;
+				}
+			}
+		}
+	}
+	/* &:after {
+		content: "";
+		.clear-fix;
+	} */
+}

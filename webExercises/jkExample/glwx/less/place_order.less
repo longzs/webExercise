@@ -1,0 +1,220 @@
+@import "mixins/variables.less";
+@import "mixins/mixins.less";
+@import "mixins/reset.less";
+@import "mixins/site.less";
+@import "mixins/alert.less";
+/* styles inherited from site.less */
+.loading {
+	.site > .loading;
+}
+.locator {
+	.site > .locator;
+}
+.window {
+	.site > .window;
+	// windows defined in page
+	&.cards-window {
+		color: @desc-color;
+		.header {
+			padding-top: @block-spacing-large;
+			margin: 0 @block-spacing;
+			text-align: center;
+		}
+		.cards {
+			padding: @block-spacing @block-spacing-large @block-spacing-large;
+		}
+		.card {
+			.site > .select-item;
+		}
+		.no-card {
+			display: none;
+			text-align: center;
+			font-size: @small-size;
+			color: @desc-color-lighter;
+		}
+		.oprs {
+			border-top: 1px solid @border-color-dark;
+		}
+		.opr {
+			float: left;
+			width: 50%;
+			line-height: @btn-height;
+			text-align: center;
+			&.cancel {
+				position: relative;
+				&:after {
+					content: "";
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					right: 0;
+					width: 1px;
+					background-color: @border-color-dark;
+				}
+			}
+			&.confirm {
+				color: @selected-color;
+			}
+		}
+	}
+}
+.alert-wrap {
+	.alert-wrap;
+	&.prompt {
+		.alert-desc {
+			text-align: left;
+		}
+	}
+}
+.btn {
+	.site > .btn;
+}
+/* page styles */
+.register-unique {
+	display: none;
+}
+.wrap {
+	background-color: @white;
+}
+.title {
+	color: @desc-color-lighter;
+}
+.need-to-know, .edit-patient {
+	float: right;
+	color: @selected-color;
+}
+.warning {
+	float: right;
+	color: @error-color;
+}
+.doctor-wrap {
+	padding: @block-spacing;
+	border-bottom: 1px solid @border-color-dark;
+	overflow: hidden;
+	background-color: @white;
+	@info-width: 80%;
+	@image-wrap-with: 100% - @info-width;
+	> .wrap {
+		margin-bottom: @block-spacing-large;
+		padding-left: 0; 
+		padding-right: 0; 
+	}
+	.info-wrap {
+		float: left;
+		width: @info-width;
+		line-height: @line-height;
+		font-size: @sub-size;
+		vertical-align: top;
+		color: @desc-color;
+		.info {
+			padding-left: @block-spacing;
+			&:first-child {
+				padding-bottom: @block-spacing-small;
+			}
+		}
+		.doc-name {
+			font-size: @normal-size;
+		}
+		.charge {
+			line-height: 1em;
+			color: @error-color;
+			&:after {
+				content: "元（请以医院实际价格为准）";
+			}
+		}
+		.label-control {
+			.label-control(@width: 5em);
+		}
+	}
+	.image-wrap {
+		float: left;
+		width: @image-wrap-with;
+		.doc-img {
+			width: 100%;
+		}
+	}
+}
+.patient-wrap {
+	padding: @block-spacing 0;
+	border-bottom: 1px solid @border-color-dark;
+	background-color: @white;
+	.patients {
+		&:after {
+			content: "";
+			.clear-fix;
+		}
+	}
+	@patient-height: 40px;
+	.patient {
+		float: left;
+		width: 50%;
+		line-height: @patient-height;
+		font-size: 0;
+		.site > .select-item;
+	}
+}
+.card-wrap {
+	padding: @block-spacing 0;
+	border-bottom: 1px solid @border-color-dark;
+	background-color: @white;
+	@select-arrow-size: 8px;
+	.card-content {
+		position: relative;
+		.card-info {
+			margin-top: @block-spacing-small;
+		}
+		.card-type {
+			font-size: @desc-size;
+			color: @desc-color;
+		}
+		.card-no {
+			color: @desc-color-lighter;
+		}
+		.select-card {
+			position: absolute;
+			left: @block-spacing;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			height: 1em;
+			line-height: 1em;
+			color: @desc-color;
+		}
+		&.selected {
+			.select-card {
+				display: none;
+			}
+		}
+		.arrow {
+			.arrow(@select-arrow-size;  @spacing: 2px);
+			position: absolute;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+		}
+		&.disabled {
+			.arrow {
+				display: none;
+			}
+		}
+	}
+}
+.warm-prompt {
+	&:after {
+		content: "";
+		display: block;
+		height: @btn-height + @sp-height;
+	}
+	padding: @block-spacing-large @block-spacing;
+	line-height: @line-height;
+	color: @desc-color;
+	background-color: @white;
+	h3, p {
+		margin: @block-spacing 0;
+	}
+	.prompt-title {
+		font-weight: normal;
+		color: @desc-color-lighter;
+	}
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>这是新页面</title>
+    <link type="text/css" href="CSS/freeStyle.css" rel="stylesheet">
+</head>
+<div class="op-test-1">
+    <span class="op-test-lab">this is </span>
+</div>
+<p id="abc">abc</p>
+<button id="btn" onclick="zsl.clickBtn()">btn</button>
+<input id="input-1" type="password" placeholder="11111">
+<button class="btnReq" style="display: block">btnReq</button>
+<div class="op-time1"></div>
+<div class="op-time2"></div>
+<div class="listView"></div>
+<script src="jquery-2.1.1.min.js"></script>
+<script type="text/javascript", src="abcd.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".op-test-lab").click(function(){
+            $(this).hide();
+        })
+    })
+</script>
+</body>
+</html>

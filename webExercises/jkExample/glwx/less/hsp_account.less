@@ -1,0 +1,60 @@
+@import "mixins/variables.less";
+@import "mixins/mixins.less";
+@import "mixins/reset.less";
+@import "mixins/site.less";
+@import "mixins/alert.less";
+/* styles inherited from site.less */
+.locator {
+	.site > .locator;
+}
+.alert-wrap {
+	.alert-wrap;
+}
+.btn {
+	.site > .btn(@info-color);
+}
+.navbar {
+	display: none;
+	.site > .navigator;
+}
+/* page styles */
+section > header {
+	padding: @block-spacing-large 0 @block-spacing @block-spacing;
+	font-size: @small-size;
+	color: @desc-color-light;
+}
+.item {
+	@glyph-size: 20px;
+	@glyph-space: @glyph-size * 2;
+	position: relative;
+	padding: @block-spacing-large @block-spacing @block-spacing-large @glyph-space;
+	line-height: @line-height;
+	color: @desc-color;
+	background-color: @white;
+	&:before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		width: @glyph-space;
+		background: center no-repeat;
+		background-size: @glyph-size @glyph-size;
+	}
+	&.account {
+		color: @info-color;
+		&:before {
+			background-image: url("@{images}/glyph_select.png");
+		}
+		&.selected {
+			&:before {
+				background-image: url("@{images}/glyph_selected.png");
+			}
+		}
+	}
+	&.btn-add {
+		&:before {
+			background-image: url("@{images}/glyph_add.png");
+		}
+	}
+}

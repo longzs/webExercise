@@ -1,0 +1,205 @@
+@import "mixins/variables.less";
+@import "@{mixins}/mixins.less";
+@import "@{mixins}/reset.less";
+@import "mixins/site.less";
+@import "mixins/form.less";
+@import "@{mixins}/alert.less";
+/* styles inherited from site.less */
+.loading {
+	.site > .loading;
+}
+.locator {
+	.site > .locator;
+}
+.btn {
+	.site > .btn(@bg-color: @edit-color);
+	&.add-btn {
+		display: none;
+	}
+}
+.alert-wrap {
+	/* <= alert.less */
+	.alert-wrap;
+	&.delete-prompt, &.guarder-info {
+		.alert-wrap > .modify(2);
+	}
+}
+/* page styles */
+.page {
+	display: none;
+	.prompt {
+		padding: @block-spacing-large @block-spacing @block-spacing;
+		margin: 0;
+		font-size: @small-size;
+		color: @black-lighter;
+	}
+	&.default {
+		.visitors {
+			&:after {
+				// <= mixins.less
+				.spacer((@btn-height +  @sp-height));
+			}
+		}
+	}
+	/* add-page */
+	@input-height: 30px;
+	&.add {
+		.add-wrap {
+			&:before {
+				/* <= mixins.less */
+				.extend-margin;
+			}
+			background-color: @white;
+		}
+		.input-wrap {
+			position: relative;
+			padding: 0 @block-spacing-small;
+			border-bottom: 1px solid @border-color-dark;
+			line-height: @input-height;
+			color: @black-light;
+		}
+		.input-title {
+			position: absolute;
+			left: @block-spacing;
+			top: 0;
+			font-size: @normal-size;
+		}
+		.add-input {
+			.normalize-input;
+			display: block;
+			width: 100%;
+			height: @input-height;
+			margin: @block-spacing 0;
+			text-align: right;
+		}
+	}
+	&.verify {
+		.verify-code-wrap {
+			// <= form.less
+			.code-wrap;
+		}
+	}
+	&.edit {
+		.edit-prompt {
+			padding: @block-spacing;
+			font-size: @sub-size;
+			color: @black-lighter;
+		}
+		/* styles that extensible */
+		.edit-wrap {
+			&:before {
+				.extend-margin;
+			}
+			&:extend(.page.add .add-wrap);
+		}
+		.input-wrap {
+			&:extend(.page.add .input-wrap);
+		}
+		.input-title {
+			&:extend(.page.add .input-title);
+		}
+		.edit-input {
+			&:extend(.page.add .add-input);
+			&.input-name, &.input-old-phone {
+				user-select: none;
+			}
+		}
+	}
+}
+.visitor {
+	position: relative;
+	margin-bottom: @block-spacing;
+	color: @desc-color;
+	background-color: @white;
+	.name-wrap {
+		display: table-cell;
+		min-width: 3em;
+		padding-right: @block-spacing-large;
+		border-right: 1px solid @border-color-dark;
+		font-size: @desc-size;
+		vertical-align: middle;
+	}
+	> .info-wrap {
+		position: relative;
+		left: 0;
+		z-index: @base-zIndex - 1;
+		padding: @block-spacing-large @block-spacing;
+		background-color: @white;
+		> .info-wrap {
+			display: table-cell;
+			width: 100%;	
+			padding-left: @block-spacing;
+		}
+		.info {
+			@font-size: @sub-size;
+			@glyph-size: @font-size;
+			font-size: @font-size;
+			line-height: 1em;
+			&:first-child {
+				padding-bottom: @block-spacing;
+			}
+			&:before {
+				content: "";
+				display: inline-block;
+				width: @glyph-size;
+				height: @glyph-size;
+				margin-right: @block-spacing;
+				vertical-align: top;
+				background: center no-repeat;
+				background-size: @glyph-size @glyph-size;
+			}
+			&.idnum {
+				&:before {
+					background-image: url("@{images}/glyph_visitor_idnum.png");
+				}
+			}
+			&.phone {
+				&:before {
+					background-image: url("@{images}/glyph_visitor_tel.png");
+				}
+			}
+		}
+		@arrow-size: 6px;
+		.arrow {
+			.arrow(@arrow-size; @direction: 2);
+			position: absolute;
+			right: @block-spacing;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+		}
+		&.static-mode {
+			transition: left .2s ease-in-out;
+		}
+	}
+	@opr-width: 70px;
+	.opr-wrap {
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: @base-zIndex - 2;
+		.opr {
+			float: left;
+			width: @opr-width;
+			height: 100%;
+			font-size: 0;
+			@glyph-size: @sub-size;
+			background: center no-repeat;
+			background-size: @glyph-size @glyph-size;
+			&.edit {
+				background-color: @edit-color;
+				background-image: url("@{images}/glyph_visitor_edit.png");
+			}
+			&.delete {
+				background-color: @delete-color;
+				background-image: url("@{images}/glyph_visitor_delete.png");
+			}
+		}
+	}
+	&.user-self {
+		.arrow {
+			display: none;
+		}
+	}
+}

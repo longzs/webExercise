@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>HTML表单标签演示</title>
+</head>
+
+<body>
+<form> <!--如果要给服务端提交数据，表单中的组件一定要有name属性和value属性，
+              用于给服务端获取数据方便-->
+    <h2>form表单标签的input标签的十个组件</h2>
+    输入名称：<input type="text" name="user" value="" /><br/>
+    <!-- 密码的输入时需要隐藏其输入的字符串-->
+    输入密码：<input type="password" name="psw" /><br/>
+    <!-- 性别的选择需要放置在同一组内，两者只能选择其一-->
+    选择性别第一种情况：<input type="radio" name="sex" value="man" />男 <input type="radio" name="sex" value="woman" />女 <br/>
+    <!--如果一个网站的注册用户为同一性别，可以使用其属性checked，性别选择为默认(这一次默认选择女)-->
+    选择性别第二种情况：<input type="radio" name="sex" value="man" />男 <input type="radio" name="sex" value="woman" checked="checked" />女 <br/>
+    <!--如果选择多项的内容，需要用到复选框，可以选择多项内容-->
+    选择技术：<input type="checkbox" name="technology" value="JAVA" />JAVA
+    <input type="checkbox" name="technology" value="HTML" />HTML
+    <input type="checkbox" name="technology" value="CSS" />CSS <br/>
+    选择文件：<input type="file" name="file" /><br/>
+    <!--这个图片组件可以有提交数据的功能-->
+    一个图片：<input name="hh" type="image" src="22.jpg" height="48" width="72" align="middle"/><br/>
+    <!--数据不需要客户端知道，但是可以将其提交给服务端-->
+    隐藏组件：<input type="hidden" name="hidden" value="myvalue" /><br/>
+    一个按钮：<input type="button" value="点击按钮" onclick="alert('我是由点击按钮动作弹出的')" /><br/>
+
+    <h2>form表单标签的select标签</h2>
+    选择国家：<select name="country">
+        <option value="none">--选择国家--</option>
+        <option value="China" selected="selected">中国</option>
+        <option value="USA">美国</option>
+        <option value="UK">英国</option>
+    </select><br/>
+    <h2>form表单标签的textarea标签</h2>
+    所写内容：<textarea name="text">
+                        </textarea><br/>
+    <input type="reset" value="重置数据" />
+
+    <input type="submit" value="提交数据" />
+</form>
+</body>
+</html>

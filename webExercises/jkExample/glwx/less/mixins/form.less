@@ -1,0 +1,99 @@
+.input-wrap {
+	position: relative;
+}
+@input-width: 100%;
+@input-height: 50px;
+.input {
+	.normalize-input;
+	display: block;
+	width: @input-width;
+	height: @input-height;
+	margin: 15px auto;
+	border-top: 1px solid @gray-light;
+	border-bottom: 1px solid @gray-light;
+	font-size: @sub-size;
+	text-indent: 5px;
+	letter-spacing: 1px;
+	&.ok {
+		border-color: @btn-color;
+		color: @btn-color;
+	}
+	&.input-submit {
+		font-size: @normal-size;
+		font-weight: bold;
+		letter-spacing: 2px;
+		color: @white;
+		background-color: @btn-color;
+	}
+	&.clicking {
+		opacity: .7;
+	}
+	&.submiting {
+		background-color: lighten(@btn-color, 10%)
+	}
+}
+@code-padding: 1%;
+@code-input-width: 55%;
+.code-wrap() {
+	width: @input-width - @code-padding * 2;
+	margin: 15px @code-padding;
+	.input-wrap {
+		float: left;
+		width: @code-input-width;
+		.input {
+			margin: 0;
+		}
+	}
+	.get-code-wrap {
+		float: right;
+		width: 100% - @code-input-width - 5%;
+		@code-size: @small-size;
+		.get-code {
+			display: block;
+			width: 100%;
+			border: 1px solid @btn-color;
+			padding: (@input-height - @code-size - 2) / 2 0;
+			text-align: center;
+			font-size: @code-size;
+			line-height: 1em;
+			color: @btn-color;
+			@sending-color: #A9A9A9;
+			&.sending.disabled {
+				color: @sending-color;
+				background-color: @white;
+				border-color: @gray-light;
+			}
+			&.disabled {
+				color: @black-lighter;
+				background-color: lighten(@gray-light, 10%);
+				border-color: @sending-color;
+			}
+			&.failed {
+				color: @error-color;
+				background-color: @white;
+				border-color: @error-color;
+			}
+		}
+		.time-left {
+			display: none;
+			padding-left: 2px;
+			&:after {
+				content: "s";
+			}
+		}
+	}
+	&:after {
+		content: "";
+		.clear-fix;
+	}
+	&.inverse {
+		.input-code {
+			border: none;
+			background-color: #eee;
+		}
+		.get-code {
+			color: @desc-color;
+			border-color: @border-color-dark;
+		}
+	}
+}

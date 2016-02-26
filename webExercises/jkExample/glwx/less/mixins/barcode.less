@@ -1,0 +1,14 @@
+.code39(@bg-color: #000; @bar-width: 2px; @bar-height: 40px){
+	display: inline-block;
+	height: @bar-height;
+	.digit {
+		display: inline-block;
+		height: 100%;
+		width: @bar-width;
+		font-size: 0;
+		background-color: @white;
+		&.digit-1 {
+			background-color: @bg-color;
+		}
+	}
+}

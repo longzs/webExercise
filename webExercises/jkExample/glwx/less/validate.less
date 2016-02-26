@@ -1,0 +1,32 @@
+@import "mixins/variables.less";
+@import "mixins/mixins.less";
+@import "mixins/reset.less";
+@import "mixins/site.less";
+@import "mixins/form.less";
+@import "mixins/alert.less";
+/* styles inherited from site.less */
+.alert-wrap {
+	.alert-wrap;
+	&.failed {
+		.alert-wrap > .modify(2);
+	}
+}
+.locator {
+	.site > .locator;
+}
+.loading {
+	.site > .loading;
+}
+/* page styles */
+.validate-wrap::before {
+	content: "";
+	display: block;
+	height: 40px;
+	font-size: 0;
+}
+.input-wrap.guarderId {
+	display: none;
+}
+.verify-code-wrap {
+	.code-wrap;
+}

@@ -1,0 +1,213 @@
+@import "mixins/variables.less";
+@import "mixins/mixins.less";
+@import "mixins/reset.less";
+@import "mixins/site.less";
+@import "mixins/tab.less";
+/* styles inherited from site.less */
+.loading {
+	.site > .loading;
+}
+.tabs {
+	.tab(@color: @selected-color; @font-color: @desc-color);
+}
+/* page styles */
+body {
+	background-color: @white;
+}
+.floor-page {
+	// display: none;
+}
+.symptom-page {
+	display: none;
+}
+.buildings {
+	display: none;
+}
+.layout {
+	@layout-img-width: image-width("../img/layout.png");
+	@limit-width: (@layout-img-width + @block-spacing * 2);
+	position: relative;
+	display: none;
+	max-width: @layout-img-width;
+	margin: @block-spacing;
+	.layout-img {
+		display: block;
+		width: 100%;
+	}
+	.hotspot {
+		position: absolute;
+		// background-color: rgba(0, 0, 0, 0);
+		background-color: transparent;
+		&.hs1 {
+		    left: 18.7%;
+		    top: 44.2%;
+		    height: 15.5%;
+		    width: 60%;
+		}
+		 &.hs2 {
+			left: 28.7%;
+		    top: 59.7%;
+		    height: 8.5%;
+		    width: 50%;
+		} 
+		&.hs3 {
+			left: 37.7%;
+		    top: 68.2%;
+		    height: 17.5%;
+		    width: 43.2%;
+		}
+	}
+	@media screen and (min-width: @limit-width) {
+		margin: @block-spacing auto;
+	}
+}
+.bldg {
+	display: none;
+	padding: @block-spacing;
+	font-size: @normal-size;
+	color: @desc-color;
+	@flag-font-size: 28px;
+	@arrow-size: 6px;
+	.floor {
+		position: relative;
+		// 为楼层标志预留空间
+		padding: @block-spacing-large 0 @block-spacing @flag-font-size * 2;
+		border-bottom: 1px solid @border-color-dark;
+		&:before {
+			content: attr(data-id);
+			position: absolute;
+			left: 0;
+			font-size: @flag-font-size;
+			line-height: @flag-font-size;
+			color: @desc-color-light;
+		}
+		&:after {
+			content: "";
+			.clear-fix;
+		}
+		.r {
+			float: left;
+			width: 50%;
+			padding-bottom: @block-spacing;
+			line-height: 1em;
+		}
+		&.has-detail {
+			padding-right: @arrow-size * 2;
+			.arrow {
+				.arrow(@arrow-size);
+				position: absolute;
+				right: -@arrow-size / 2;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+			}
+		}
+	}
+}
+// 人体图
+.symptom-page {
+	position: relative;
+	margin: @block-spacing;
+	@radius: 25px;
+	height: (@radius + 1) * 2 * 9 + @block-spacing-small * 9;
+	.gender-bar {
+		position: relative;
+		margin: 0 (@radius * 2 + @block-spacing * 2);
+		.gender {
+			visibility: hidden;
+			&.active {
+				visibility: visible;
+			}
+			.body-img {
+				display: block;
+				max-width: 100%;
+				margin: auto;
+			}
+		}
+	}
+	.part-bar {
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		width: (@radius + 1) * 2;
+	}
+	.other-part {
+		position: absolute;
+		right: 0;
+		top: 0;
+		// font-size: @sub-size;
+		padding: @block-spacing 0;
+		color: @info-color;
+	}
+	.switch-bar {
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: (@radius + 1) * 2;
+		height: (@radius + 1) * 2 * 3 + @block-spacing-small * 3;
+		margin: auto;
+		text-align: center;
+		&:after {
+			content: "正反切换";
+			font-size: @small-size;
+			color: @info-color;
+		}
+	}
+	.btn {
+		float: left;
+		width: @radius * 2;
+		margin-bottom: @block-spacing-small;
+		border: 1px solid @info-color;
+		border-radius: 50%;
+		line-height: @radius * 2;
+		text-align: center;
+		font-size: @sub-size;
+		color: @info-color;
+		background: @white;
+		&.side-switch {
+			background: url("@{images}/switch.png") no-repeat center;
+			background-size: @radius @radius;
+			transition: transform .4s linear;
+			transform-style: preserve-3d; 
+		}
+		&.selected {
+			background-color: @selected-color;
+			color: @white;
+		}
+	}
+	.side {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		// bottom: 0;
+		transition: transform .4s linear;
+		backface-visibility: hidden;
+		transform-style: preserve-3d;
+		&:after {
+			content: "";
+			.clear-fix;
+		}
+		&.front-side {
+			transform: rotateY(0deg);
+		}
+		&.back-side {
+			transform: rotateY(-180deg);
+		}
+	}
+	&.turn-back {
+		.part-bar,  .gender.active {
+			.front-side {
+				transform: rotateY(180deg);
+			}
+			.back-side {
+				transform: rotateY(0deg);
+			}
+		}
+		.side-switch {
+			transform: rotateY(180deg);
+		}
+	}
+}

@@ -1,0 +1,229 @@
+@import "mixins/variables.less";
+@import "mixins/mixins.less";
+@import "mixins/reset.less";
+@import "mixins/site.less";
+@import "mixins/alert.less";
+@import "mixins/form.less";
+/* styles inherited from site.less */
+.loading {
+	.site > .loading;
+}
+.locator {
+	.site > .locator;
+}
+.btn {
+	.site > .btn(@info-color);
+}
+.float-divider {
+	.clear-fix;
+}
+/* page styles */
+.alert-wrap {
+	.alert-wrap;
+}
+.navigator {
+	display: none;
+	.site > .navigator;
+}
+.user-list {
+	display: none;
+	.head {
+		margin: @block-spacing 0 @block-spacing-small;
+		font-size: @sub-size;
+		color: @desc-color;
+	}
+	.items {
+		list-style-type: none;
+		padding-left: 0;
+		margin: 0;
+		background-color: @white;
+		color: @black-light;
+	}
+	.item {
+		padding: @block-spacing-small @block-spacing;
+		border-bottom: 1px solid @border-color;
+		line-height: @item-height;
+		&.add-account {
+			background-color: @white;
+			.add-img {
+				vertical-align: middle;
+			}
+			.desc {
+				padding-left: @block-spacing * 2;
+				vertical-align: middle;
+			}
+		}
+	}
+	.user {
+		position: relative;
+		@select-wrap-size: 40px;
+		@select-size: @select-wrap-size / 2;
+		.select-wrap {
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			width: @select-wrap-size;
+			.select-img {
+				.center-abs(@select-size, @select-size);
+				border-radius: 50%;
+				border: 1px solid @border-color-dark;
+			}
+		}
+		.select-value {
+			display: block;
+			padding-left: @select-wrap-size;
+			line-height: 30px;
+			&.card-type {
+				&:before {
+					content: "(";
+				}
+				&:after {
+					content: ")";
+				}
+			}
+		}
+		&.selected {
+			.select-img {
+				border-color: transparent;
+				background-color: @selected-color;
+			}
+			.select-value {
+				color: @selected-color;
+			}
+		}
+	}
+}
+.no-log {
+	display: none;
+	.head {
+		margin: 0;
+		padding: @block-spacing;
+		text-align: center;
+		letter-spacing: 1px;
+		color: @black-lighter;
+	}
+	.input {
+		border: none;
+		margin: 0;
+		&.input-code {
+			border-bottom: 1px solid @border-color;
+		}
+	}
+}
+.logged {
+	display: none;
+	.user-info {
+		display: none;
+		@switch-btn-width: 60px;
+		position: relative;
+		margin-bottom: @block-spacing;
+		padding: @block-spacing-small 0;
+		padding-right: @switch-btn-width + @block-spacing * 2;
+		background-color: @white;
+		.wrap {
+			&:first-child {
+				padding-bottom: 0;
+			}
+		}
+		.title {
+			display: inline-block;
+			width: 4.5em;
+			font-size: @sub-size;
+			color: @desc-color-light;
+		}
+		.value {
+			font-size: @sub-size;
+			color: @desc-color;
+			&.area {
+				color: @info-color;
+			}
+		}
+		.btn-inline {
+			position: absolute;
+			right: @block-spacing;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			// .site > .inline-btn(@width: @switch-btn-width; @bg-color: @white; @border-color: @desc-color-light; @color: @desc-color);
+		}
+	}
+}
+.header {
+	padding: @block-spacing;
+	border-bottom: 1px solid @border-color-darker;
+	font-size: @desc-size;
+	text-align: center;
+	color: @desc-color;
+	background-color: @white;
+}
+.navi-list {
+	display: block;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	font-size: 0;
+	background-color: @white;
+}
+.navi {
+	position: relative;
+	float: left;
+	width: 100% / 3;
+	&.display-alone {
+		float: none;
+		display: block;
+		width: auto;
+		margin: @block-spacing 0;
+		background-color: @white;
+		@alone-img-size: 25px;
+		.navi-wrap {
+			padding: @block-spacing @block-spacing-large;
+			padding-right: 20px;
+			border-top: none;
+			text-align: left;
+		}
+		.navi-icon {
+			width: @alone-img-size;
+			height: @alone-img-size;
+		}
+		.navi-desc {
+			display: inline-block;
+			padding-left: @block-spacing;
+			line-height: @alone-img-size;
+		}
+		.arrow {
+			.arrow;
+			position: absolute;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+		}
+	}
+	.navi-wrap {
+		display: inline-block;
+		padding: 20px 0;
+		width: 100%;
+		// border-top: 1px solid @border-color-darker;
+		font-size: 0;
+		text-align: center;
+		text-decoration: none;
+		&:nth-child(2n+1) {
+			border-right: 1px solid @border-color-darker;
+		}
+	}
+	.navi-icon {
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		font-size: 0;
+	}
+	.navi-desc {
+		display: block;
+		font-size: @normal-size;
+		line-height: 30px;
+		vertical-align: top;
+		color: @desc-color-light;
+	}
+}

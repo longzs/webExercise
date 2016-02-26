@@ -1,0 +1,27 @@
+@import "mixins/variables.less";
+@import "mixins/mixins.less";
+@import "mixins/reset.less";
+@import "mixins/site.less";
+@import "mixins/form.less";
+@import "mixins/alert.less";
+/* styles inherited from site.less */
+.alert-wrap {
+	.alert-wrap;
+}
+/* page styles */
+.login-wrap::before {
+	content: "";
+	display: block;
+	height: 40px;
+	font-size: 0;
+}
+.op-bar {
+	display: block;
+	margin-right: 10px;
+	text-align: right;
+	.op {
+		display: inline-block;
+		padding: 5px;
+		color: @black-lighter;
+	}
+}

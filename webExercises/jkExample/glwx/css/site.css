@@ -1,0 +1,122 @@
+body {
+	margin: 0;
+	font-family: Microsoft YaHei, STXihei;
+}
+p {
+	margin: 0;	
+}
+input[type=text], input[type=password], input[type=submit] {
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.input {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+.overlayer {
+	position: fixed;
+	z-index: 1100;
+	left : 0;
+	top : 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.5);
+	display: none;
+}
+.locator, .window {
+	position: absolute;
+	z-index: 1200;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom : 0;
+	width: 80%;
+	margin: auto;
+	display: none;
+}
+.locator {
+	height: 1px;
+}
+.window {
+	height: 80px;
+}
+ .alert-window {
+	text-align: center;
+}
+.alert-window-info {
+	width: 100px;
+	margin: auto;
+	font-size: 12px;
+	letter-spacing: 1px;
+	padding: 10px;
+	color: #FFFFFF;
+	background-color: rgba(11, 11, 11, 0.7);
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-o-border-radius: 2px;
+	border-radius: 2px;
+}
+.alert-window.failed .alert-window-info {
+	background-color: rgba(255,91,1,0.8);
+} 
+.float-divider {
+	line-height: 0;
+	height: 0;
+	clear: both;
+}
+.loading, .common-loading {
+	position : absolute;
+	z-index : 1500;
+	margin : auto;
+	left : 0;
+	right : 0;
+	bottom : 0;
+	top : 0;
+	text-align : center;
+	display : none;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.loading {
+	width : 250px;
+	height : 100px;
+	padding : 10px 0;
+}
+.common-loading {
+	width : 80px;
+	height : 80px;
+	background-color: rgba(0,0,0,0.7);
+}
+.common-loading-holder {
+	font-size: 12px;
+	display: block;
+	color: rgba(255,255,255,0.8);
+	letter-spacing: 2px;
+	vertical-align: middle;
+}
+.common-loading-pic {
+	opacity: 0.5;
+	vertical-align: middle;
+}
+.loading.white {
+	background-color: #FFFFFF;
+}
+.loading-pic {
+	vertical-align: bottom;
+}
+.loading-text {
+	color: #999999;
+	font-size: 12px;
+	padding-top: 10px;
+	display: block;
+}
+.clicking {
+	opacity: 0.8;
+}
+.template {
+	display: none !important;
+}

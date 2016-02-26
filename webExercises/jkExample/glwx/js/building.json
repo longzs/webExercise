@@ -1,0 +1,538 @@
+{
+    "builds": [
+        {
+            "buildId": "1",
+            "buildLevel": [
+                {
+                    "levelId": "1",
+                    "levelDepartments": [
+                        {
+                            "departmentId": "",
+                            "departmentName": "鼓楼大药房"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "导医台"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "超市"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "肝炎门诊"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "餐饮"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "肠道门诊"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "银行"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "发热门诊"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "自助挂号预约"
+                        }
+                    ],
+                    "levelName": "1F"
+                },
+                {
+                    "levelId": "2",
+                    "levelDepartments": [
+                        {
+                            "departmentId": "",
+                            "departmentName": "普通外科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "整形美容烧伤科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "疼痛科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "专业护理门诊"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "康复医学科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "泌尿外科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "骨科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "骨代谢性疾病门诊"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "超声诊断科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "神经外科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "男科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "体外冲击波碎石室"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "心胸外科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "碎石门诊"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "门诊放射检查"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "血管外科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "伤口护理室"
+                        }
+                    ],
+                    "levelName": "2F"
+                },
+                {
+                    "levelId": "3",
+                    "levelDepartments": [
+                        {
+                            "departmentId": "",
+                            "departmentName": "风湿免疫科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "临床营养科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "心血管内科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "核医学门诊"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "呼吸内科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "药学门诊"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "普通内科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "超声诊断科消化内科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "功能检查区"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "肿瘤科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "血液内科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "肾内科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "心脏起搏器门诊"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "神经内科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "注射室"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "内分泌科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "门诊办公室"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "介入门诊"
+                        }
+                    ],
+                    "levelName": "3F"
+                },
+                {
+                    "levelId": "4",
+                    "levelDepartments": [
+                        {
+                            "departmentId": "",
+                            "departmentName": "产科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "妇产科超声诊断"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "产前诊断中心"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "妇产科手术室"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "消化内镜诊疗中心"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "妇科"
+                        }
+                    ],
+                    "levelName": "4F"
+                },
+                {
+                    "levelId": "5",
+                    "levelDepartments": [
+                        {
+                            "departmentId": "",
+                            "departmentName": "著名专家门诊"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "预防保健科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "多学科综合门诊"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "南京宁益眼科中心"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "皮肤性病科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "耳鼻喉咽头颈外科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "口腔科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "医学心理科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "中医科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "针灸科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "推拿科"
+                        }
+                    ],
+                    "levelName": "5F"
+                }
+            ],
+            "buildName": "门诊"
+        },
+        {
+            "buildId": "3",
+            "buildLevel": [
+                {
+                    "levelId": "1",
+                    "levelDepartments": [
+                        {
+                            "departmentId": "",
+                            "departmentName": "急诊医学科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "导医台"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "消毒供应室"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "急诊病区"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "EICU"
+                        }
+                    ],
+                    "levelName": "1F"
+                },
+                {
+                    "levelId": "2",
+                    "levelDepartments": [
+                        {
+                            "departmentId": "",
+                            "departmentName": "钢琴厅"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "出入院结账处"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "CT磁共振"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "馨园（手术等待区）"
+                        }
+                    ],
+                    "levelName": "2F"
+                },
+                {
+                    "levelId": "3",
+                    "levelDepartments": [
+                        {
+                            "departmentId": "",
+                            "departmentName": "门诊手术室"
+                        }
+                    ],
+                    "levelName": "3F"
+                },
+                {
+                    "levelId": "4",
+                    "levelDepartments": [
+                        {
+                            "departmentId": "",
+                            "departmentName": "麻醉手术科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "手术室"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "DSA"
+                        }
+                    ],
+                    "levelName": "4F"
+                },
+                {
+                    "levelId": "5",
+                    "levelDepartments": [
+                        {
+                            "departmentId": "",
+                            "departmentName": "重症监护室（ICU）"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "手术室"
+                        }
+                    ],
+                    "levelName": "5F"
+                },
+                {
+                    "levelId": "6",
+                    "levelDepartments": [
+                        {
+                            "departmentId": "",
+                            "departmentName": "医学检验科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "信息管理办公室"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "病案统计室"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "输血科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "计算机中心"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "图书馆"
+                        }
+                    ],
+                    "levelName": "6F"
+                },
+                {
+                    "levelId": "7",
+                    "levelDepartments": [
+                        {
+                            "departmentId": "",
+                            "departmentName": "心胸外科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "血管外科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "放射介入科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "心胸外科监护室"
+                        }
+                    ],
+                    "levelName": "7F"
+                },
+                {
+                    "levelId": "8",
+                    "levelDepartments": [
+                        {
+                            "departmentId": "",
+                            "departmentName": "心血管内科监护室"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "心血管内科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "普通外科"
+                        }
+                    ],
+                    "levelName": "8F"
+                },
+                {
+                    "levelId": "9",
+                    "levelDepartments": [
+                        {
+                            "departmentId": "",
+                            "departmentName": "普通外科"
+                        }
+                    ],
+                    "levelName": "9F"
+                },
+                {
+                    "levelId": "10",
+                    "levelDepartments": [
+                        {
+                            "departmentId": "",
+                            "departmentName": "骨科"
+                        }
+                    ],
+                    "levelName": "10F"
+                },
+                {
+                    "levelId": "11",
+                    "levelDepartments": [
+                        {
+                            "departmentId": "",
+                            "departmentName": "呼吸内科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "耳鼻咽喉头颈外科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "骨科"
+                        }
+                    ],
+                    "levelName": "11F"
+                },
+                {
+                    "levelId": "12",
+                    "levelDepartments": [
+                        {
+                            "departmentId": "",
+                            "departmentName": "神经内科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "神经外科"
+                        }
+                    ],
+                    "levelName": "12F"
+                },
+                {
+                    "levelId": "13",
+                    "levelDepartments": [
+                        {
+                            "departmentId": "",
+                            "departmentName": "消化内科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "肿瘤科"
+                        }
+                    ],
+                    "levelName": "13F"
+                },
+                {
+                    "levelId": "14",
+                    "levelDepartments": [
+                        {
+                            "departmentId": "",
+                            "departmentName": "净化病区"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "风湿免疫科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "内分泌科"
+                        },
+                        {
+                            "departmentId": "",
+                            "departmentName": "血液内科"
+                        }
+                    ],
+                    "levelName": "14F"
+                }
+            ],
+            "buildName": "住院楼"
+        }
+    ]
+}

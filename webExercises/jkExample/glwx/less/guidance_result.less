@@ -1,0 +1,132 @@
+@import "mixins/variables.less";
+@import "mixins/mixins.less";
+@import "mixins/reset.less";
+@import "mixins/site.less";
+/* styles inherited from site.less */
+.loading {
+	.site > .loading;
+}
+.locator {
+	.site > .locator;
+}
+.no-wrap {
+	.site > .no-wrap;
+}
+/* page styles */
+.wrapper {
+	color: @desc-color;
+}
+.anchor-wrap {
+	padding: @block-spacing-large @block-spacing;
+	border-bottom: 1px solid @border-color-dark;
+	font-size: @sub-size;
+	line-height: 1em;
+	background-color: @white;
+	.anchor {
+		display: inline-block;
+		&:not(:empty):not(:last-child) {
+			@arrow-size: @sub-size;
+			&:after {
+				content: "";
+				display: inline-block;
+				width: @arrow-size;
+				height: @arrow-size;
+				margin: 0 @block-spacing;
+				vertical-align: top;
+				background: url("@{images}/glyph_arrow.png") center no-repeat;
+				background-size: @arrow-size @arrow-size;
+			}
+		}
+	}
+}
+.reference-wrap {
+	display: none;
+	padding: @block-spacing-large @block-spacing;
+	border-bottom: 1px solid @border-color-dark;
+	background-color: @white;
+	.image-wrap {
+		display: table-cell;
+	}
+	.info-wrap {
+		display: table-cell;
+		padding-left: @block-spacing;
+		line-height: @line-height;
+		vertical-align: middle;
+		// text-align: justify;
+		.reference-dep-name {
+			&:before {
+				content: "参考科室：";
+			}
+		}
+		.notice {
+			font-size: @sub-size;
+			color: @desc-color-light;
+		}
+	}
+}
+.recommend-wrap {
+	display: none;
+	.title {
+		padding: @block-spacing-large @block-spacing @block-spacing;
+		font-size: @sub-size;
+		color: @desc-color-light;
+		.reference-dep-name {
+			margin: 0 @block-spacing-small;
+			color: @info-color;
+		}
+	}
+	.experts {
+		padding: 0 @block-spacing;
+		background-color: @white;
+	}
+	.expert {
+		display: table;
+		width: 100%;
+		padding: @block-spacing 0;
+		margin-bottom: @block-spacing;
+		border-bottom: 1px solid @border-color-dark;
+		overflow: hidden;
+		background-color: @white;
+		@info-width: 80%;
+		@image-wrap-with: 100% - @info-width;
+		&:last-child {
+			border-bottom: none;
+		}
+		.info-wrap {
+			display: table-cell;
+			width: @info-width;
+			font-size: @sub-size;
+			line-height: @line-height;
+			vertical-align: middle;
+			color: @desc-color;
+		}
+		.image-wrap {
+			.doc-img {
+				display: block;
+				max-width: 100%;
+			}
+		}
+		.doc-name {
+			font-size: @normal-size;
+		}
+		.doc-princ {
+			color: @desc-color-lighter;
+		}
+		.has-schedule {
+			display: none;
+			float: right;
+			margin-right: -@block-spacing;
+			color: @success-color;
+		}
+		.no-schedule {
+			display: none;
+			float: right;
+			color: @error-color;
+		}
+		.expert-in {
+			&:before {
+				content: "擅长：";
+			}
+		}
+	}
+}

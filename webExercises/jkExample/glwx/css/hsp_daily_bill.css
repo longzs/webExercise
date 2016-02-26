@@ -1,0 +1,716 @@
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+html {
+  font-family: STHeiti Light, STHeiti, STXihei, Microsoft YaHei;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+a {
+  background-color: transparent;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+body {
+  background-color: #EFEFF4;
+}
+body:before {
+  content: "";
+  display: table;
+}
+body:after {
+  content: "";
+  display: block;
+  height: 0;
+  padding-bottom: 30px;
+  line-height: 0;
+  font-size: 0;
+}
+body .sp {
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  line-height: 30px;
+  color: #969C9F;
+  background-color: #FFF;
+}
+body > .banner .banner-img {
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}
+p {
+  margin: 0;
+}
+.template,
+.hidden {
+  display: none !important;
+}
+.container {
+  padding: 15px 10px;
+}
+.container:before {
+  content: "";
+  display: table;
+}
+.container:after {
+  content: "";
+  display: table;
+}
+.container .wrap {
+  padding: 2px 0;
+}
+.wrap {
+  display: block;
+  padding: 5px 10px;
+}
+.wrap:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  font-size: 0;
+  line-height: 0;
+}
+.muted {
+  color: #b4b9bb;
+}
+/* styles inherited from site.less */
+.loading {
+  z-index: 1500;
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  /* height and width's value are explicitly declared */
+  width: 250px;
+  height: 100px;
+  margin: auto;
+  border-radius: 5px;
+  padding: 10px 0;
+  text-align: center;
+}
+.loading.white {
+  background-color: #FFF;
+}
+.loading .loading-pic {
+  vertical-align: bottom;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.loading .loading-text {
+  display: block;
+  padding-top: 10px;
+  font-size: 12px;
+  color: #999;
+}
+.loading.common {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.loading.common .loading-text {
+  padding-top: 0;
+  letter-spacing: 2px;
+  vertical-align: middle;
+  color: rgba(255, 255, 255, 0.8);
+}
+.loading.common .loading-pic {
+  opacity: .5;
+  vertical-align: middle;
+}
+.loading.blocked:after {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1500;
+}
+.locator {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  /* height and width's value are explicitly declared */
+  width: 80%;
+  height: auto;
+  margin: auto;
+  display: none;
+  max-width: 240px;
+  height: 0;
+}
+.locator.alert-window {
+  z-index: 1101;
+  text-align: center;
+}
+.locator.alert-window .alert-window-info {
+  width: 100px;
+  margin: auto;
+  padding: 10px;
+  border-radius: 2px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #FFF;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.locator.alert-window.failed .alert-window-info {
+  background-color: rgba(255, 106, 77, 0.8);
+}
+.btn {
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 45px;
+  text-align: center;
+  color: #FFF;
+  background-color: #2BBFD6;
+}
+.btn.btn-fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  z-index: 999;
+}
+.btn.btn-fixed + .btn-space-holder {
+  display: block;
+  height: 45px;
+  margin: 10px auto 30px;
+  background-color: transparent;
+}
+.btn.btn-inverse {
+  color: #2BBFD6;
+  background-color: #FFF;
+}
+.btn.btn-inline {
+  display: inline-block;
+  width: auto;
+  height: 30px;
+  padding: 0 15px;
+  line-height: 30px;
+}
+.btn.disabled {
+  color: #777;
+  background-color: #DFDFDF;
+}
+.btn.submiting {
+  box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.1) inset;
+  background-color: #56ccde;
+}
+.alert-wrap {
+  z-index: 1000;
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: transparent;
+}
+.alert-wrap .alert {
+  z-index: 1002;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 150px;
+  width: 80%;
+  max-width: 300px;
+  margin: auto;
+  border-radius: 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: #FFF;
+}
+.alert-wrap .alert-layer {
+  z-index: 1001;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  /* height and width's value are explicitly declared */
+  width: auto;
+  height: auto;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.alert-wrap .alert-info {
+  padding: 25px 10px;
+  text-align: center;
+}
+.alert-wrap .alert-info .alert-title {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5em;
+  color: #333;
+}
+.alert-wrap .alert-info .alert-desc {
+  display: block;
+  font-size: 14px;
+  line-height: 2em;
+  color: #666;
+}
+.alert-wrap .alert-ops {
+  overflow: hidden;
+  border-top: 1px solid #C7CCCF;
+}
+.alert-wrap .alert-op-wrap {
+  float: left;
+  width: 100%;
+}
+.alert-wrap .alert-op-wrap .alert-op {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #2BBFD6;
+}
+.alert-wrap .alert-op-wrap.cancel .alert-op {
+  color: #333;
+}
+.alert-wrap .alert-op-wrap:nth-child(2n + 1) .alert-op {
+  border-right: 1px solid #C7CCCF;
+}
+.alert-wrap .slide {
+  overflow: auto;
+}
+@media screen and (max-height: 480px) {
+  .alert-wrap .slide {
+    max-height: 50px;
+  }
+}
+@media screen and (min-height: 480px) and (max-height: 640px) {
+  .alert-wrap .slide {
+    max-height: 80px;
+  }
+}
+@media screen and (min-height: 640px) {
+  .alert-wrap .slide {
+    max-height: 120px;
+  }
+}
+.navbar {
+  display: none;
+  position: relative;
+  height: 50px;
+  padding-left: 50px;
+  border-bottom: 1px solid #CCCDCE;
+  line-height: 50px;
+  text-align: center;
+  text-indent: -50px;
+  color: #4D585C;
+  background-color: #FFF;
+}
+.navbar #back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  background: url("/assets/glwx/img/back.png") center no-repeat;
+  background-size: 20px 20px;
+}
+.navbar:after {
+  content: attr(data-title);
+}
+.navbar.nav-fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+/* page styles */
+.user-info {
+  position: relative;
+  display: none;
+  padding: 10px 80px 10px 0;
+  margin-bottom: 10px;
+  background-color: #FFF;
+}
+.user-info .info {
+  padding-left: 10px;
+  font-size: 14px;
+  line-height: 1.5em;
+}
+.user-info .info .label {
+  display: table-cell;
+  min-width: 5em;
+  color: #969C9F;
+}
+.user-info .info .value {
+  display: table-cell;
+  word-break: break-all;
+}
+.user-info .info .area {
+  color: #2BBFD6;
+}
+.user-info .switch-user {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  color: #4D585C;
+  background-color: #FFF;
+  border: 1px solid #C7CCCF;
+}
+.sp {
+  background-color: #FFF !important;
+}
+.search-wrap {
+  margin-top: 20px;
+  border-top: 1px solid #F5F5F5;
+}
+.search-wrap .select-wrap {
+  position: relative;
+  border-bottom: 1px solid #F5F5F5;
+}
+.search-wrap .select-wrap .select-year,
+.search-wrap .select-wrap .select-month,
+.search-wrap .select-wrap .select-date {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  /* hide default appearance */
+  border-radius: 0;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  display: block;
+  width: 100%;
+  height: 45px;
+  font-size: 16px;
+  text-indent: 10px;
+  color: #4D585C;
+  background-color: #FFF;
+}
+.search-wrap .select-wrap .arrow {
+  /* direction map, 1:top, 2:right, 3:bottom 4:left */
+  position: relative;
+  display: inline-block;
+  /* make it available to set height if display property not given, 
+		it will be overwritten while display property such as block,inline and so on was given */
+  height: 0;
+  border: 8px solid transparent;
+  border-left: 8px solid #999;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  right: 0;
+  top: 14.5px;
+}
+.search-wrap .select-wrap .arrow:after {
+  content: "";
+  position: absolute;
+  left: -9px;
+  top: -8px;
+  border: 8px solid transparent;
+  /* set the relative background's color of arrow */
+  border-left: 8px solid #FFF;
+}
+.detail-wrap {
+  display: none;
+}
+/* sub-infos of detail-wrap, write outside of detail-wrap to avoid multi-level css selectors */
+.patient-info {
+  padding: 10px;
+  font-size: 16px;
+  color: #666;
+}
+.patient-info .info {
+  display: block;
+  line-height: 1.5em;
+}
+.main-info .items {
+  margin-bottom: 100px;
+  color: #333;
+}
+.main-info .item.unfold .fold-btn {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.main-info .item.unfold .item-detail {
+  display: table;
+}
+.main-info .item-brief {
+  position: relative;
+  padding: 10px 0;
+  padding-right: 40px;
+  border-bottom: 1px solid #F5F5F5;
+  line-height: 1.5em;
+  background-color: #FFF;
+}
+.main-info .brief-name {
+  display: inline-block;
+  margin: 0 10px;
+  min-width: 6em;
+}
+.main-info .fold-btn {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  /* subtract border-width */
+  right: 19px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 1px solid #C9CED1;
+  border-radius: 50%;
+  text-align: center;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: -webkit-transform .1s;
+          transition: transform .1s;
+  /* .arrow(@size: 10px; @spacing: 1px; @color: @black-lightest; @bg-color: @white; @direction: left) */
+}
+.main-info .fold-btn .fold-arrow {
+  /* direction map, 1:top, 2:right, 3:bottom 4:left */
+  position: relative;
+  display: inline-block;
+  /* make it available to set height if display property not given, 
+		it will be overwritten while display property such as block,inline and so on was given */
+  height: 0;
+  border: 6px solid transparent;
+  border-top: 6px solid #999;
+  font-size: 0;
+  line-height: 0;
+  vertical-align: middle;
+}
+.main-info .fold-btn .fold-arrow:after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: -6px;
+  border: 6px solid transparent;
+  /* set the relative background's color of arrow */
+  border-top: 6px solid #FFF;
+}
+.main-info .item-detail {
+  width: 100%;
+  display: none;
+  border-collapse: collapse;
+}
+.main-info .item-detail th {
+  min-width: 3em;
+  padding: 10px 0;
+  text-align: left;
+  text-indent: 5px;
+  color: #FFF;
+  background-color: #29657F;
+}
+.main-info .item-detail td {
+  padding: 10px 0;
+  border-bottom: 1px solid #C7CCCF;
+  text-indent: 5px;
+}
+.count-info {
+  position: fixed;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  font-size: 14px;
+  line-height: 35px;
+  color: #333;
+  background-color: #FFF;
+}
+.count-info:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  font-size: 0;
+  line-height: 0;
+}
+.count-info .count-item {
+  float: left;
+  width: 50%;
+}
+.count-info .count-item .value {
+  color: #52CC4E;
+}

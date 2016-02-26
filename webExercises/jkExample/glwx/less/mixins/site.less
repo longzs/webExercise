@@ -1,0 +1,307 @@
+@sp-height: 30px;
+body {
+	background-color: @bg-color;
+	&:before {
+		content: "";
+		display: table;
+	}
+	&:after {
+		content: "";
+		display: block;
+		height: 0;
+		padding-bottom: @sp-height;
+		line-height: 0;
+		font-size: 0;
+	}
+	.sp {
+		position: fixed;
+		z-index: @base-zIndex - 1;
+		bottom: 0;
+		width: 100%;
+		font-size: @small-size;
+		text-align: center;
+		line-height: @sp-height;
+		color: @desc-color-light;
+		background-color: @white;
+	}
+	> .banner {
+		.banner-img {
+			display: block;
+			max-width: 100%;
+			margin: auto;
+		}
+	}
+}
+p {
+	margin: 0;
+}
+.template, .hidden {
+	display: none !important;
+}
+.container {
+	padding: @block-spacing-large @block-spacing;
+	&:before {
+		content: "";
+		display: table;
+	}
+	&:after {
+		content: "";
+		display: table;
+	}
+	.wrap {
+		padding: 2px 0;
+	}
+}
+.wrap {
+	display: block;
+	padding: @block-spacing-small @block-spacing;
+	&:after {
+		content: "";
+		.clear-fix;
+	}
+}
+.muted {
+	color: lighten(@desc-color-lighter, 10%);
+}
+.site() {
+	.overlayer {
+		.layer(fadeout(@black, 30%));
+		z-index: @base-zIndex + 100;
+		display: none;
+	}
+	.locator {
+		.center-abs(80%);
+		display: none;
+		max-width: 240px;
+		height: 0;
+		&.alert-window {
+			z-index: @base-zIndex + 101;
+			text-align: center;
+			.alert-window-info {
+				width: @alert-window-width;
+				margin: auto;
+				padding: 10px;
+				.radius(2px);
+				font-size: @alert-window-font-size;
+				letter-spacing: 1px;
+				color: @white;
+				background-color: fadeout(@black, 30%);
+			}
+			&.failed .alert-window-info {
+				background-color: fadeout(@error-color, 20%)
+			}
+		}
+	}
+	.window {
+		@window-width: 80%;
+		@window-max-width: 300px;
+		z-index: @base-zIndex;
+		display: none; 
+		.layer;
+		.content {
+			position: absolute;
+			z-index: @base-zIndex + 2;
+			left: 0;
+			right: 0;
+			top: 150px;
+			width: @window-width;
+			max-width: @window-max-width;
+			margin: auto;
+			.radius(2px);
+			user-select: none;
+			background-color: @white;
+		}
+		.overlayer {
+			z-index: @base-zIndex + 1;
+			.center-abs;
+			background-color: fadeout(@black, 85%);
+		}
+		.slide {
+			overflow: auto;
+			@media screen and (max-height: 480px) {
+				max-height: 50px;
+			}
+			@media screen and (min-height: 480px) and (max-height: 640px) {
+				max-height: 80px;
+			}
+			@media screen and (min-height: 640px) {
+				max-height: 120px;
+			}
+		}
+	}
+	.loading {
+		z-index: @base-zIndex + 500;
+		display: none;
+		.center-abs(@loading-width, @loading-height);
+		.radius;
+		padding: 10px 0;
+		text-align: center;
+		&.white {
+			background-color: @white;
+		}
+		.loading-pic {
+			vertical-align: bottom;
+			transform: translate3d(0, 0, 0);
+		}
+		.loading-text {
+			display: block;
+			padding-top: 10px;
+			font-size: @small-size;
+			color: @black-lightest;
+		}
+		&.common {
+			position: fixed;
+			width: @common-loading-size;
+			height: @common-loading-size;
+			padding: 0;
+			background-color: fadeout(@black, 30%);
+			.loading-text {
+				padding-top: 0;
+				letter-spacing: 2px;
+				vertical-align: middle;
+				color: fadeout(@white, 20%);
+			}
+			.loading-pic {
+				opacity: .5;
+				vertical-align: middle;
+			}
+		}
+		&.blocked {
+			&:after {
+				content: "";
+				.layer(rgba(0, 0, 0, .3));
+				z-index: @base-zIndex + 500;
+			}
+		}
+	}
+	.no-wrap(@img-size: @no-data-img-size) {
+		position: relative;
+		top: -@no-data-offset-top;
+		width: @no-data-width;
+		margin: auto;
+		font-size: 0;
+		.no-img {
+			display: block;
+			width: @img-size;
+			margin: auto;
+		}
+		.no-desc {
+			display: block;
+			padding-top: 10px;
+			text-align: center;
+			font-size: @desc-size;
+			color: @desc-color-lighter;
+		}
+	}
+	.btn(@bg-color: @btn-color; @color: @white; @border-color: true; @width: auto; @height: @btn-height) {
+		font-size: @sub-size;
+		letter-spacing: 1px;
+		line-height: @height;
+		text-align: center;
+		color: @color;
+		background-color: @bg-color;
+		& when (iscolor(@border-color)) {
+			border: 1px solid @border-color;
+		}
+		// 固定底部
+		&.btn-fixed {
+			position: fixed;
+			left: 0;
+			right: 0;
+			bottom: @sp-height;
+			z-index: @base-zIndex - 1;
+			+ .btn-space-holder {
+				// has the same box-model with its corresponding button to hold space
+				display: block;
+				height: @height;
+				margin: @block-spacing auto @sp-height;
+				background-color: transparent;
+			}
+		}
+		// 颜色翻转
+		&.btn-inverse {
+			color: @bg-color;
+			background-color: @color;
+		}
+		// 内联button
+		&.btn-inline {
+			@height: @inline-btn-height;
+			display: inline-block;
+			width: @width;
+			height: @height;
+			& when (@width = auto) {
+				padding: 0 @block-spacing-large;
+			}
+			line-height: @height;
+		}
+		// 禁用样式
+		&.disabled {
+			color: @disabled-color;
+			background-color: @disabled-bg-color;
+		}
+		// 提交时（点击）样式
+		&.submiting {
+			box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .1) inset;
+			background-color: lighten(@bg-color, 10%);
+		}
+	}
+	.navigator {
+		position: relative;
+		height: @navi-height;
+		padding-left: @navi-height;
+		border-bottom: 1px solid @navi-border-color;
+		line-height: @navi-height;
+		text-align: center;
+		text-indent: -@navi-height;
+		color: @desc-color;
+		background-color: @navi-bg-color;
+		#back {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: @navi-height;
+			background: url("@{images}/back.png") center no-repeat;
+			background-size: 20px 20px;
+		}
+		&:after {
+			content: attr(data-title);
+		}
+		&.nav-fixed-top {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: @base-zIndex;
+		}
+	}
+	.select-item(@select-img-size: 20px) {
+		.select-wrap {
+			display: inline-block;
+			width: @select-img-size;
+			height: @select-img-size;
+			margin: 0 @block-spacing;
+			border: 1px solid @border-color-darker;
+			border-radius: 50%;
+			vertical-align: middle;
+		}
+		&.selected {
+			.select-wrap {
+				border-color: transparent;
+				background-color: @selected-color;
+			}
+			.select-value {
+				color: @selected-color;
+			}
+		}
+		.select-img {
+			display: block;
+		}
+		.select-value {
+			display: inline-block;
+			font-size: @normal-size;
+			vertical-align: middle;
+			color: @desc-color;
+		}
+	}
+}

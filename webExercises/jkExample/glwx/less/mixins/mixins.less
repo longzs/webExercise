@@ -1,0 +1,111 @@
+.center-abs(@width: auto; @height: auto; @explicit: true) {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	& when (@explicit) {
+		/* height and width's value are explicitly declared */
+		width: @width;
+		height: @height;
+	}
+	margin: auto;
+}
+.layer(@bg: transparent; @pos: fixed) {
+	position: @pos;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	background-color: @bg;
+}
+.remove-default-appearance() {
+	.radius(0);
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+.normalize-input() {
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+	box-sizing: border-box;
+	/* hide default appearance */
+	.remove-default-appearance;
+}
+.radius(@r: 5px) {
+	border-radius: @r;
+}
+.clear-fix(@preserve-margin: false) {
+	& when (@preserve-margin = true) {
+		display: table;
+	}
+	& when (@preserve-margin = false) {
+		display: block;
+	}
+	height: 0;
+	clear: both;
+	font-size: 0;
+	line-height: 0;
+}
+.extend-margin() {
+	content: "";
+	display: table;
+	height: 0;
+	line-height: 0;
+	font-size: 0;
+}
+.text-overflow() {
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.arrow(@size: 10px; @spacing: 1px; @color: @black-lightest; @bg-color: @white; @direction: 4) {
+	/* direction map, 1:top, 2:right, 3:bottom 4:left */
+	@directions: top right bottom left;
+	@reversed-directions: left bottom right top;
+	@dir: extract(@directions, @direction);
+	@r-dir:  extract(@reversed-directions, @direction);
+
+	position: relative;
+	display: inline-block;
+	/* make it available to set height if display property not given, 
+		it will be overwritten while display property such as block,inline and so on was given */
+	height: 0;
+	border: @size solid transparent;
+	border-@{dir}: @size solid @color;
+	font-size: 0;
+	line-height: 0;
+	&:after {
+		content: "";
+		position: absolute;
+		@{dir}: -@size - @spacing;
+		@{r-dir}: -@size;
+		border: @size solid transparent;
+		/* set the relative background's color of arrow */
+		border-@{dir}: @size solid @bg-color;
+	}
+}
+.spacer(@margin: 0; @direction: bottom) {
+	/* make space by css-pseudo element */
+	content: "";
+	display: block;
+	height: 0;
+	margin-@{direction}: @margin;
+	line-height: 0;
+	font-size: 0;
+}
+.label-control(@width: auto; @color: inherit) {
+	.label {
+		display: table-cell;
+		min-width: @width;
+		color: @color;
+	}
+	.value {
+		display: table-cell;
+		word-break: break-all;
+	}
+}

@@ -1,0 +1,79 @@
+@sch-width: 40%;
+.schedule() {
+	display: none;
+	width: @sch-width;
+	padding: 10px 0;
+	border: 1px solid @btn-color;
+	.radius(e("15px / 50%"));
+	font-size: @small-size;
+	text-align: center;
+	letter-spacing: 1px;
+	color: @btn-color;
+}
+.schedule-wrap() {
+	float: left;
+	width: 50%;
+	margin: 5px 0;
+	@sch-height: 32px;
+	.schedule {
+		position: relative;
+		display: table;
+		width: 90%;
+		margin: auto;
+		height: @sch-height;
+		border: 1px solid @border-color-darker;
+		.radius(5px);
+		overflow: hidden;
+		font-size: @small-size;
+		line-height: 2em;
+		color: @desc-color;
+		@state-width: 4em;
+		.state {
+			position: absolute;
+			z-index: @base-zIndex - 1;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			width: @state-width;
+			line-height: @small-size;
+			text-align: center;
+			color: @white;
+			background-color: @btn-color;
+			&:after {
+				content: "";
+				position: absolute;
+				.center-abs(@width: auto; @height: 1em);
+			}
+		}
+		.time {
+			position: relative;
+			display: table-cell;
+			padding-right: @state-width;
+			text-align: center;
+			vertical-align: middle;
+		}
+		&.ok {
+			.state:after {
+				content: "有号";
+			}
+		}
+		&.full {
+			color: @desc-color-light;
+			.state {
+				background-color: @border-color-darker;
+				&:after {
+					content: "约满";
+				}
+			}
+		}
+		&.stop {
+			color: @desc-color-light;
+			.state {
+				background-color: @error-color;
+				&:after {
+					content: "停诊";
+				}
+			}
+		}
+	}
+}

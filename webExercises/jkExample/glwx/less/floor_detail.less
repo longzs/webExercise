@@ -1,0 +1,32 @@
+@import "mixins/variables.less";
+@import "mixins/mixins.less";
+@import "mixins/reset.less";
+@import "mixins/site.less";
+/* page styles */
+body {
+	background-color: @white;
+}
+.floor {
+	display: none;
+}
+.image-wrap {
+	width: 85%;
+	margin: @block-spacing auto;
+	.floor-img {
+		display: block;
+		max-width: 100%;
+		margin: auto;
+	}
+}
+.sections {
+	padding: @block-spacing;
+	.section {
+		padding: @block-spacing-small 0;
+		line-height: 1em;
+		color: @desc-color;
+		.sec {
+			font-size: 80%;
+			color: @desc-color-light;
+		}
+	}
+}

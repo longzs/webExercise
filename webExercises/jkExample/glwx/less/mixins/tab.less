@@ -1,0 +1,52 @@
+.tab(@num: 2; @color: #FFFFFF; @bg-color: transparent; @font-color: #333333; @ul-height: 2px; @border-color: false) {
+	display: block;
+	overflow: hidden;
+	letter-spacing: 1px;
+	background-color: @bg-color;
+	color: @font-color;
+	.tab {
+		position: relative;
+		float: left;
+		width: 100% / @num;
+		padding: @block-spacing-large 0;
+		text-align: center;
+		font-size: @sub-size;
+		line-height: 1em;
+		&:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 0;
+			background-color: @color;
+		}
+		&.selected {
+			color: @color;
+			&:after {
+				height: @ul-height;
+			}
+		}
+		 &:not(.selected) {
+			&:after {
+				height: 1px;
+				background-color: @border-color-dark;
+			}
+		} 
+	}
+	& when(iscolor(@border-color)) {
+		border-bottom: 1px solid @border-color;
+	}
+	&.fixed-top {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: @base-zIndex - 1;
+		+ .tab-space-holder {
+			display: block;
+			height: @sub-size;
+			padding: @block-spacing-large 0;
+		}
+	}
+}

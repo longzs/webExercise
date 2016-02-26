@@ -1,0 +1,100 @@
+@import "mixins/variables.less";
+@import "mixins/mixins.less";
+@import "mixins/reset.less";
+@import "mixins/site.less";
+@import "mixins/alert.less";
+@import "mixins/barcode.less";
+/* styles inherited from site.less */
+.loading {
+	.site > .loading;
+}
+.locator {
+	.site > .locator;
+}
+.btn {
+	.site > .btn(@bg-color: @selected-color);
+}
+.alert-wrap {
+	.alert-wrap(2);
+	.alert-info {
+		text-align: left;
+	}
+	.price-text {
+		display: block;
+	}
+}
+.overlayer {
+	.layer(rgba(0, 0, 0, .3));
+	z-index: @base-zIndex + 500;
+}
+/* page styles */
+.result {
+	display: none;
+	color: @desc-color;
+	background-color: @white;
+	margin-bottom: @btn-height + @sp-height;
+	@media screen and (min-height: 480px) {
+		&.failed {
+			padding: 100px 0;
+		}
+	}
+	.result-img {
+		display: block;
+		margin: auto;
+	}
+	.desc {
+		display: block;
+		padding-top: @block-spacing-small;
+		line-height: @line-height;
+		text-align: center;
+		.value {
+			padding-left: @block-spacing;
+		}
+		.verifycode {
+			font-weight: bold;
+		}
+		.error-msg {
+			color: @error-color;
+		}
+	}
+	.info-wrap {
+		padding: @block-spacing 0;
+		&:not(:last-child) {
+			border-bottom: 1px solid @border-color-dark;
+		}
+		.title {
+			display: inline-block;
+			width: 4.5em;
+		}
+		.title, .header {
+			color: @desc-color-light;
+		}
+		.value {
+			&.tip {
+				display: block;
+				padding-bottom: @block-spacing-small;
+			}
+		}
+	}
+}
+.code-wrap {
+	display: block;
+	margin: @block-spacing;
+	padding: @block-spacing;
+	border: 1px solid @border-color-dark;
+	text-align: center;
+	.code {
+		.code39(@bar-width: 1px);
+	}
+	.code-no {
+		display: block;
+		font-size: @small-size;
+		color: @desc-color;
+		&:before {
+			content: "病历号：";
+		}
+	}
+}
+.highlight {
+	color: @info-color;
+}

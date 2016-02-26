@@ -1,0 +1,130 @@
+@import "mixins/variables.less";
+@import "mixins/mixins.less";
+@import "mixins/reset.less";
+@import "mixins/site.less";
+@import "mixins/alert.less";
+/* styles inherited from site.less */
+.btn {
+	.site > .btn;
+	&.cancel-btn, &.reserve-btn {
+		float: right;
+		display: none;
+		color: @desc-color;
+		background-color: @white;
+		border: 1px solid @border-color-dark;
+	}
+} 
+.alert-wrap {
+	.alert-wrap;
+	&.cancel-prompt {
+		.alert-wrap > .modify(2);
+	}
+}
+.loading {
+	.site > .loading;
+}
+.locator {
+	.site > .locator;
+}
+/* page styles */
+.order-detail {
+	padding: @block-spacing;
+	color: @desc-color;
+	background-color: @white;
+	.detail-wrap {
+		padding: @block-spacing 0;
+		border-bottom: 1px solid @border-color-darker;
+		font-size: @sub-size;
+		&:last-child {
+			border-bottom: none;
+			padding-bottom: 0;
+		}
+		.wrap {
+			padding: @block-spacing-small 0;
+			.label-control(@width: 5em;  @color: @desc-color-light);
+		}
+		.value {
+			&.charge {
+				color: @error-color;
+				&:after {
+					content: "元（请以医院实际价格为准）";
+				}
+			}
+		}
+	}
+	.state-wrap {
+		display: block;
+		padding-top: 0;
+		padding-bottom: @block-spacing;
+		line-height: @inline-btn-height;
+		&.break {
+			color: @highlight-color;
+		}
+		.day-left {
+			display: none;
+			.left-days {
+				padding-left: @block-spacing-small;
+				color: @selected-color;
+			}
+			&:before {
+				content: "距离就诊还有";
+			}
+		}
+		.visit-state {
+			display: none;
+		}
+		.no-left {
+			display: none;
+			color: @selected-color;
+		}
+		.cancel-btn {
+			float: right;
+		}
+		&:after {
+			content: "";
+			.clear-fix;
+		}
+	}
+	.visit-wrap {
+		position: relative;
+		.pay-btn {
+			position: absolute;
+			right: 0;
+			bottom: @block-spacing;
+			display: none;
+		} 
+	}
+	.reserve-unique, .register-unique {
+		display: none;
+	}
+	&.pay-needed {
+		.visit-wrap {
+			/* 按钮为4字长 */
+			@btn-width: 4 * @sub-size;
+			.info-wrap {
+				padding-right: @btn-width + 10px;
+			}
+			.pay-btn {
+				display: inline-block;
+			}
+		}
+	}
+	&.reserve {
+		.reserve-unique {
+			display: block;
+		}
+		&.history {
+			.reserve-btn {
+				display: inline-block;
+			}
+		}
+	}
+	&.register {
+		.register-unique {
+			display: block;
+		}
+		.reserve-btn {
+			&:extend(.order.reserve.history .reserve-btn);
+		}
+	}
+}

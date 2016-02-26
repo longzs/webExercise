@@ -1,0 +1,139 @@
+@import "mixins/variables.less";
+@import "mixins/mixins.less";
+@import "mixins/reset.less";
+@import "mixins/site.less";
+@import "mixins/alert.less";
+/* styles inherited from site.less */
+.btn {
+	.site > .btn;
+	&.cancel-btn, &.reserve-btn {
+		float: right;
+		display: none;
+		color: @desc-color;
+		background-color: @white;
+		border: 1px solid @border-color-dark;
+	}
+}
+.alert-wrap {
+	.alert-wrap;
+	&.cancel-prompt {
+		.alert-wrap > .modify(2);
+	}
+}
+.loading {
+	.site > .loading;
+}
+.locator {
+	.site > .locator;
+}
+.no-wrap {
+	.site > .no-wrap;
+	/* iphone4 */
+	@media screen and (min-height: 470px) and (max-height: 640px) {
+		top: -@no-data-offset-top - 70px;
+	}
+	/* iphone6 */
+	@media screen and (min-height: 640px) {
+		top: -@no-data-offset-top - 160px;
+	}
+}
+/* page styles */
+.order {
+	padding: @block-spacing;
+	margin-bottom: @block-spacing;
+	color: @desc-color;
+	background-color: @white;
+	.state {
+		display: block;
+		padding-bottom: @block-spacing;
+		border-bottom: 1px solid @border-color-darker;
+		line-height: @inline-btn-height;
+		&.break {
+			color: @highlight-color;
+		}
+		.day-left {
+			display: none;
+			.left-days {
+				padding-left: @block-spacing-small;
+				color: @selected-color;
+			}
+			&:before {
+				content: "距离就诊还有";
+			}
+		}
+		.visit-state {
+			display: none;
+		}
+		.no-left {
+			display: none;
+			color: @selected-color;
+		}
+		.cancel-btn {
+			float: right;
+		}
+		&:after {
+			content: "";
+			.clear-fix;
+		}
+	}
+	.detail {
+		position: relative;
+		font-size: @sub-size;
+		.wrap {
+			padding: @block-spacing-small 0;
+			&:first-child {
+				margin-top: @block-spacing;
+			}
+			.label-control(@width: 5em;  @color: @desc-color-light);
+		}
+		.value {
+			&.charge {
+				color: @error-color;
+				&:after {
+					content: "元（请以医院实际价格为准）";
+				}
+			}
+		}
+		.pay-btn {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			display: none;
+		} 
+	}
+	.reserve-unique, .register-unique {
+		display: none;
+	}
+	&.pay-needed {
+		.detail {
+			/* 按钮为4字长 */
+			@btn-width: 4 * @sub-size;
+			.info-wrap {
+				padding-right: @btn-width + 10px;
+			}
+			.pay-btn {
+				display: inline-block;
+			}
+		}
+	}
+	&.reserve {
+		.reserve-unique {
+			display: block;
+		}
+		&.history {
+			.reserve-btn {
+				display: inline-block;
+			}
+		}
+	}
+	&.register {
+		.register-unique {
+			display: block;
+		}
+		&.history {
+			.reserve-btn {
+				display: inline-block;
+			}
+		}
+	}
+}

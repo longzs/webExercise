@@ -1,0 +1,166 @@
+@import "mixins/variables.less";
+@import "mixins/mixins.less";
+@import "mixins/reset.less";
+@import "mixins/site.less";
+/* styles inherited from site.less */
+.loading {
+	.site > .loading;
+}
+.locator {
+	.site > .locator;
+}
+.no-wrap {
+	.site > .no-wrap;
+}
+/* page styles */
+.deps-page {
+	display: none;
+	.no-result {
+		display: none;
+		margin-top: 10px;
+		text-align: center;
+		color: @desc-color;
+	}
+}
+.expert-page {
+	display: none;
+}
+.header {
+	padding: 10px;
+	margin-bottom: 10px;
+	font-size: 0;
+	background-color: @white;
+	color: @selected-color;
+	.header-img {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.dep-name {
+		vertical-align: middle;
+		font-size: @sub-size;
+		&:after {
+			content: "介绍";
+		}
+	}
+	.arrow {
+		float: right;
+		@arrow-size: 8px;
+		.arrow(@arrow-size);
+		/* reposition */
+		top: (24px - @arrow-size * 2) / 2;
+	}
+}
+.experts {
+	background-color: @white;
+	@image-width: 60px;
+	.expert {
+		position: relative;
+		padding: 10px;
+		border-bottom: 1px solid @border-color;
+		min-height: @image-width + 10px;
+	}
+	.image-wrap {
+		position: absolute;
+		left: 10px;
+		top: 10px;
+		width: @image-width;
+		height: @image-width;
+		border-radius: @image-width / 2;
+		overflow: hidden;
+		.expert-img {
+			display: block;
+			width: 100%;
+		}
+	}
+	@state-width: 50px;
+	.info-wrap {
+		padding-left: @image-width + 10px;
+		padding-right: @state-width + 10px;
+		.info {
+			line-height: @line-height;
+			font-size: @sub-size;
+			color: @desc-color-light;
+		}
+		.expert-name {
+			color: @desc-color;
+			font-size: @normal-size;
+		}
+		.expert-in {
+			.text-overflow;
+			&:before {
+				content: "擅长：";
+			}
+		}
+	}
+	.state {
+		position: absolute;
+		right: 10px;
+		top: 0;
+		bottom: 0;
+		width: @state-width;
+		height: 2em;
+		margin: auto;
+		border-radius: 3px;
+		line-height: 2em;
+		font-size: 12px;
+		text-align: center;
+		color: @white;
+		background-color: @selected-color;
+		&:after {
+			content: "有号";
+		}
+		&.full, &.stop {
+			background-color: @gray-light;
+		}
+		&.full:after {
+			content: "约满";
+		}
+		&.stop:after {
+			content: "停诊";
+		}
+	}
+}
+.dep-search {
+	padding: 8px;
+	background-color: @search-bg;
+	.dep-search-wrap {
+		position: relative;
+		@indent: 30px;
+		.input-dep-search {
+			display: block;
+			width: 100%;
+			height: @search-height;
+			.normalize-input;
+			.radius;
+			text-indent: @indent;
+			background-color: @white;
+		}
+		.search-img {
+			position: absolute;
+			z-index: 1001;
+			left: (@indent - @search-img-width) / 2;
+			top: (@indent - @search-img-width) / 2;
+			font-size: 0;
+		}
+	}
+}
+.departments {
+	background-color: @white;
+	.department {
+		padding: 15px 10px;
+		border-bottom: 1px solid @border-color;
+		&.hidden {
+			display: none;
+		}
+	}
+	.dep-name {
+		font-size: @desc-size;
+	}
+	.dep-spec {
+		display: block;
+		margin-top: 5px;
+		font-size: @sub-size;
+		line-height: @line-height;
+		color: @black-lighter;
+	}
+}

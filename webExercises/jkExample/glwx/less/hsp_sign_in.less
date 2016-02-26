@@ -1,0 +1,32 @@
+@import "mixins/variables.less";
+@import "mixins/mixins.less";
+@import "mixins/reset.less";
+@import "mixins/site.less";
+@import "mixins/form.less";
+@import "mixins/alert.less";
+/* styles inherited from site.less */
+.alert-wrap {
+	.alert-wrap;
+}
+.navbar {
+	display: none;
+	.site > .navigator;
+}
+.btn {
+	.site > .btn(@info-color);
+	margin-top: @block-spacing;
+}
+/* page styles */
+section > header {
+	padding: @block-spacing;
+	text-align: center;
+	letter-spacing: 1px;
+	color: @black-lighter;
+}
+.input {
+	border: none;
+	margin: 0;
+	&.input-code {
+		border-bottom: 1px solid @border-color;
+	}
+}

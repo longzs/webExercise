@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>HTML超链接标签演示</title>
+</head>
+
+<body>
+<h4>超链接标签演示</h4>
+<!--
+超链接标签
+作用1：连接资源
+当有了href属性才有了点击效果
+href属性的值不同，解析的方式也不同。
+如果在该值中没有指定过任何协议，解析时，是按照默认的协议来解析该值的，默认的协议是file协议
+-->
+<a href="http://www.sina.com.cn/" target="_blank">新浪网站</a>
+<hr/>
+<a href="14-130R1115208.jpg">美女图片</a>
+<hr/>
+<a href="mailto:abe@sina.com">联系我们</a>
+<hr/>
+<a href="formTest.html" onclick="" target="_blank">去导航</a>
+<!--
+超链接标签
+作用2：定位标记
+-->
+<hr/>
+<a name=top>顶部位置</a>
+<br/>
+<img src="123.jpg" herght=800 width=500 boder=10 alt="123-top.jpg"></a>
+<hr/>
+<div id="id_div_ul">这里加入一个列表
+<ul id="id_ul">
+</ul>
+</div>
+<a name=center>中间位置</a>
+<br/>
+<img src="123.jpg" herght=800 width=500 boder=10 alt="123-center.jpg"></a>
+<br/>
+<a href="#top">回到顶部位置</a>
+<br/>
+<a href="#center">回到中间位置</a>
+<script type="text/javascript">
+    var ul = document.getElementById("id_ul");
+    for(i=1001;i<1111;++i){
+        var litmep=document.createElement("li");
+        litmep.innerHTML = i;
+        ul.appendChild(litmep);
+    }
+</script>
+</body>
+</html>

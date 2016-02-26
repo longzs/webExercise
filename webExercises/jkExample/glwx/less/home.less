@@ -1,0 +1,84 @@
+@import "mixins/variables.less";
+// @import "../../mixins/less/mixins.less";
+@import "mixins/mixins.less";
+@import "mixins/reset.less";
+@import "mixins/site.less";
+/* styles inherited from site.less */
+.btn {
+	.site > .btn;
+}
+/* page styles */
+.user-info {
+	@switch-btn-width: 60px;
+	position: relative;
+	display: none;
+	padding: @block-spacing-large (@switch-btn-width + @block-spacing * 2) @block-spacing-large 0;
+	margin-bottom: @block-spacing;
+	background-color: @white;
+	.info {
+		.label-control(@width: 5em; @color: @desc-color-light);
+		padding-left: @block-spacing;
+		font-size: @sub-size;
+		line-height: @line-height;
+		.area {
+			color: @info-color;
+		}
+	}
+	.switch-user {
+		position: absolute;
+		right: @block-spacing;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		color: @desc-color;
+		background-color: @white;
+		border: 1px solid @border-color-dark;
+	}
+}
+.header {
+	padding: @block-spacing;
+	font-size: @desc-size;
+	text-align: center;
+	color: @desc-color;
+	background-color: @white;
+}
+.navi-list {
+	display: block;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	border-top: 1px solid @border-color-darker;
+	overflow: hidden;
+	font-size: 0;
+	background-color: @white;
+}
+.navi {
+	position: relative;
+	float: left;
+	width: 100% / 3;
+	.navi-wrap {
+		display: inline-block;
+		padding: 20px 0;
+		width: 100%;
+		border-bottom: 1px solid @border-color-darker;
+		font-size: 0;
+		text-align: center;
+		text-decoration: none;
+		&:nth-child(2n+1) {
+			border-right: 1px solid @border-color-darker;
+		}
+	}
+	.navi-icon {
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		font-size: 0;
+	}
+	.navi-desc {
+		display: block;
+		font-size: @normal-size;
+		line-height: 30px;
+		vertical-align: top;
+		color: @desc-color-light;
+	}
+}

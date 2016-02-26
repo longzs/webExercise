@@ -1,0 +1,575 @@
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+html {
+  font-family: STHeiti Light, STHeiti, STXihei, Microsoft YaHei;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+a {
+  background-color: transparent;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+body {
+  background-color: #EFEFF4;
+}
+body:before {
+  content: "";
+  display: table;
+}
+body:after {
+  content: "";
+  display: block;
+  height: 0;
+  padding-bottom: 30px;
+  line-height: 0;
+  font-size: 0;
+}
+body .sp {
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  line-height: 30px;
+  color: #969C9F;
+  background-color: #FFF;
+}
+body > .banner .banner-img {
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}
+p {
+  margin: 0;
+}
+.template,
+.hidden {
+  display: none !important;
+}
+.container {
+  padding: 15px 10px;
+}
+.container:before {
+  content: "";
+  display: table;
+}
+.container:after {
+  content: "";
+  display: table;
+}
+.container .wrap {
+  padding: 2px 0;
+}
+.wrap {
+  display: block;
+  padding: 5px 10px;
+}
+.wrap:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  font-size: 0;
+  line-height: 0;
+}
+.muted {
+  color: #b4b9bb;
+}
+/* styles inherited from site.less */
+.loading {
+  z-index: 1500;
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  /* height and width's value are explicitly declared */
+  width: 250px;
+  height: 100px;
+  margin: auto;
+  border-radius: 5px;
+  padding: 10px 0;
+  text-align: center;
+}
+.loading.white {
+  background-color: #FFF;
+}
+.loading .loading-pic {
+  vertical-align: bottom;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.loading .loading-text {
+  display: block;
+  padding-top: 10px;
+  font-size: 12px;
+  color: #999;
+}
+.loading.common {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.loading.common .loading-text {
+  padding-top: 0;
+  letter-spacing: 2px;
+  vertical-align: middle;
+  color: rgba(255, 255, 255, 0.8);
+}
+.loading.common .loading-pic {
+  opacity: .5;
+  vertical-align: middle;
+}
+.loading.blocked:after {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1500;
+}
+.tabs {
+  display: block;
+  overflow: hidden;
+  letter-spacing: 1px;
+  background-color: transparent;
+  color: #4D585C;
+}
+.tabs .tab {
+  position: relative;
+  float: left;
+  width: 50%;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1em;
+}
+.tabs .tab:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background-color: #2BBFD6;
+}
+.tabs .tab.selected {
+  color: #2BBFD6;
+}
+.tabs .tab.selected:after {
+  height: 2px;
+}
+.tabs .tab:not(.selected):after {
+  height: 1px;
+  background-color: #C7CCCF;
+}
+.tabs.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+.tabs.fixed-top + .tab-space-holder {
+  display: block;
+  height: 14px;
+  padding: 15px 0;
+}
+/* page styles */
+body {
+  background-color: #FFF;
+}
+.symptom-page {
+  display: none;
+}
+.buildings {
+  display: none;
+}
+.layout {
+  position: relative;
+  display: none;
+  max-width: 741px;
+  margin: 10px;
+}
+.layout .layout-img {
+  display: block;
+  width: 100%;
+}
+.layout .hotspot {
+  position: absolute;
+  background-color: transparent;
+}
+.layout .hotspot.hs1 {
+  left: 18.7%;
+  top: 44.2%;
+  height: 15.5%;
+  width: 60%;
+}
+.layout .hotspot.hs2 {
+  left: 28.7%;
+  top: 59.7%;
+  height: 8.5%;
+  width: 50%;
+}
+.layout .hotspot.hs3 {
+  left: 37.7%;
+  top: 68.2%;
+  height: 17.5%;
+  width: 43.2%;
+}
+@media screen and (min-width: 761px) {
+  .layout {
+    margin: 10px auto;
+  }
+}
+.bldg {
+  display: none;
+  padding: 10px;
+  font-size: 16px;
+  color: #4D585C;
+}
+.bldg .floor {
+  position: relative;
+  padding: 15px 0 10px 56px;
+  border-bottom: 1px solid #C7CCCF;
+}
+.bldg .floor:before {
+  content: attr(data-id);
+  position: absolute;
+  left: 0;
+  font-size: 28px;
+  line-height: 28px;
+  color: #969C9F;
+}
+.bldg .floor:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  font-size: 0;
+  line-height: 0;
+}
+.bldg .floor .r {
+  float: left;
+  width: 50%;
+  padding-bottom: 10px;
+  line-height: 1em;
+}
+.bldg .floor.has-detail {
+  padding-right: 12px;
+}
+.bldg .floor.has-detail .arrow {
+  /* direction map, 1:top, 2:right, 3:bottom 4:left */
+  position: relative;
+  display: inline-block;
+  /* make it available to set height if display property not given, 
+		it will be overwritten while display property such as block,inline and so on was given */
+  height: 0;
+  border: 6px solid transparent;
+  border-left: 6px solid #999;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  right: -3px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.bldg .floor.has-detail .arrow:after {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: -6px;
+  border: 6px solid transparent;
+  /* set the relative background's color of arrow */
+  border-left: 6px solid #FFF;
+}
+.symptom-page {
+  position: relative;
+  margin: 10px;
+  height: 513px;
+}
+.symptom-page .gender-bar {
+  position: relative;
+  margin: 0 70px;
+}
+.symptom-page .gender-bar .gender {
+  visibility: hidden;
+}
+.symptom-page .gender-bar .gender.active {
+  visibility: visible;
+}
+.symptom-page .gender-bar .gender .body-img {
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}
+.symptom-page .part-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 52px;
+}
+.symptom-page .other-part {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px 0;
+  color: #2BBFD6;
+}
+.symptom-page .switch-bar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 52px;
+  height: 171px;
+  margin: auto;
+  text-align: center;
+}
+.symptom-page .switch-bar:after {
+  content: "正反切换";
+  font-size: 12px;
+  color: #2BBFD6;
+}
+.symptom-page .btn {
+  float: left;
+  width: 50px;
+  margin-bottom: 5px;
+  border: 1px solid #2BBFD6;
+  border-radius: 50%;
+  line-height: 50px;
+  text-align: center;
+  font-size: 14px;
+  color: #2BBFD6;
+  background: #FFF;
+}
+.symptom-page .btn.side-switch {
+  background: url("/assets/glwx/img/switch.png") no-repeat center;
+  background-size: 25px 25px;
+  -webkit-transition: -webkit-transform .4s linear;
+          transition: transform .4s linear;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+.symptom-page .btn.selected {
+  background-color: #2BBFD6;
+  color: #FFF;
+}
+.symptom-page .side {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  -webkit-transition: -webkit-transform .4s linear;
+          transition: transform .4s linear;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+.symptom-page .side:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  font-size: 0;
+  line-height: 0;
+}
+.symptom-page .side.front-side {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+.symptom-page .side.back-side {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+.symptom-page.turn-back .part-bar .front-side,
+.symptom-page.turn-back .gender.active .front-side {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+.symptom-page.turn-back .part-bar .back-side,
+.symptom-page.turn-back .gender.active .back-side {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+.symptom-page.turn-back .side-switch {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}

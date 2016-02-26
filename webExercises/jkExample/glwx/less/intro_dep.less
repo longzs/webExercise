@@ -1,0 +1,31 @@
+@import "mixins/variables.less";
+@import "mixins/mixins.less";
+@import "mixins/reset.less";
+@import "mixins/site.less";
+/* styles inherited from site.less */
+.loading {
+	.site > .loading;
+}
+/* page styles */
+.header {
+	padding: @block-spacing;
+	margin-bottom: @block-spacing;
+	font-size: 0;
+	color: @selected-color;
+	background-color: @white;
+	.header-img {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.dep-name {
+		vertical-align: middle;
+		font-size: @sub-size;
+		&:after {
+			content: "介绍";
+		}
+	}
+}
+.intro {
+	padding: @block-spacing;
+	color: @desc-color;
+}

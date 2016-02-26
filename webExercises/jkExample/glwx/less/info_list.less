@@ -1,0 +1,259 @@
+@import "mixins/variables.less";
+@import "mixins/mixins.less";
+@import "mixins/reset.less";
+@import "mixins/site.less";
+/* styles inherited from site.less */
+.loading {
+	.site > .loading;
+}
+.navi {
+	.site > .navigator;
+	display: none;
+	&.visible {
+		display: block;
+		&.list-navi {
+			+ .tabs {
+				top: @navi-height;
+			}
+		}
+		&.detail-navi {
+			+ .detail-head {
+				margin-top: @navi-height;
+			}
+		}
+	}
+}
+// 因为没有底部的技术服务支持，所以需要覆盖
+body {
+	&:after {
+		display: none;
+	}
+}
+/* page styles */
+.tabs {
+	position: fixed;
+	top: 0;
+	z-index: @base-zIndex;
+	display: none;
+	width: 100%;
+	box-sizing: border-box;
+	border-bottom: 1px solid @border-color;
+	overflow: hidden;
+	font-size: @normal-size;
+	line-height: 1em;
+	background-color: @white;
+	&.hover-mode {
+		opacity: .9;
+	}
+	.tab-wrap {
+		float: left;
+		text-align: center;
+		color: @desc-color;
+		&.selected {
+			color: @selected-color;
+		}
+	}
+	.tab {
+		padding: (@navi-height - @normal-size) / 2 1px;
+	}
+}
+.simple_tmpl {
+	height: 100%;
+	.info-wrap {
+		min-height: 100%;
+	}
+	.info-list {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		/*font-size: 0;*/
+		overflow: hidden;
+		background-color: @white;
+	}
+	.info {
+		position: relative;
+		padding: @block-spacing 0;
+		margin: 0 @block-spacing;
+		border-bottom: 1px solid @border-color;
+	}
+	@thumbnail-size: 60px;
+	.info-title {
+		min-height: @thumbnail-size;
+		margin-right: @thumbnail-size + @block-spacing;
+		font-size: @desc-size;
+		line-height: @thumbnail-size / 2;
+		color: @desc-color;
+	}
+	.info-img-wrap {
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: @thumbnail-size;
+		height: @thumbnail-size;
+		margin: auto;
+	}
+	.info-img {
+		display: block;
+		font-size: 0;
+		width: 100%;
+		height: 100%;
+	}
+	&.float {
+		~ .simple_tmpl {
+			margin-top: @block-spacing;
+		}
+		.info {
+			float: left;
+			width: 50%;
+			margin: 0;
+		}
+		.info-title {
+			font-size: @normal-size !important;
+		}
+		.info-content {
+			margin-right: @thumbnail-size + @block-spacing;
+			font-size: @sub-size;
+			color: @desc-color-light;
+		}
+		.info-title, .info-content {
+			padding: 0 @block-spacing;
+			overflow: hidden;
+		}
+		.info-img-wrap {
+			right: @block-spacing;
+		}
+		&.first-stressed {
+			.info {
+				padding-top: @block-spacing-large;
+				padding-bottom: @block-spacing-large;
+				border-bottom: 1px solid transparent;
+				box-sizing: border-box;
+				&:not(:nth-last-child(-n+3)) {
+					border-bottom-color: @border-color;
+				}
+				&:first-child {
+					width: 100%;
+				}
+				&:nth-child(2n) {
+					border-right: 1px solid @border-color;
+				}
+			}
+		}
+	}
+}
+.detail-wrap {
+	display: none;
+	.detail-head {
+		padding: @block-spacing;
+	}
+	.title-wrap {
+		display: block;
+		font-size: 120%;
+		margin: 0;
+		padding: @block-spacing-small 0;
+		color: @desc-color;
+	}
+	.state-wrap {
+		padding: 0;
+		line-height: 1em;
+		color: @desc-color-light;
+		font-size: @sub-size;
+	}
+	.detail-read-nums {
+		&:before {
+			content: " | 阅读";
+		}
+		&:after {
+			content: " 次";
+		}
+	}
+	.detail-img {
+		width: 100%;
+		margin-top: @block-spacing;
+		display: none;
+	}
+	.detail-content {
+		padding: @block-spacing;
+		color: @desc-color;
+		overflow: auto;
+		line-height: @line-height;
+		// 限制可置换元素的尺寸
+		img,input,select,textarea,button,label {
+			max-width: 100% !important;
+		}
+	}
+}
+.list-wrap {
+	&.condensed {
+		@thumbnail-size: 44px;
+		.simple_tmpl {
+			.info-img-wrap {
+				width: @thumbnail-size;
+				height: @thumbnail-size;
+			}
+			.info-title {
+				min-height: @thumbnail-size;
+				line-height: @thumbnail-size / 2;
+				font-size: @sub-size;
+				margin-right: @thumbnail-size + @block-spacing;
+			}
+			&.float {
+				.info-title {
+					min-height: inherit;
+					height: @thumbnail-size / 2;
+				}
+				.info-content {
+					margin-right: @thumbnail-size + @block-spacing;
+					height: @thumbnail-size / 2;
+					line-height: @thumbnail-size / 2;
+				}
+			}
+		}
+	}
+	&.first-stressed {
+		/* 突出显示第一条资讯 */
+		.tabs {
+			display: block;
+		}
+		.simple_tmpl {
+			&:before {
+				content: "";
+				display: block;
+				height: @navi-height;
+				font-size: 0;
+			}
+			.info {
+				&:first-child {
+					padding: 0;
+					margin: 0;
+					border: none;
+					&:after {
+						content: "";
+						display: block;
+						height: @block-spacing;
+						background-color: @bg-color; 
+					}
+					.info-img-wrap {
+						position: static;
+						width: 100%;
+						height: auto;
+					}
+					.info-img {
+						height: auto;
+					}
+					.info-title {
+						min-height: initial;
+						margin-right: 0;
+						padding: @block-spacing-small @block-spacing;
+					}
+				}
+			}
+		}
+	}
+}
+// fix bug
+// 百度插码的img标签没有默认隐藏导致空间占据
+script + img {
+	display: none;
+}
